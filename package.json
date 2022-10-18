@@ -11,12 +11,13 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "pub": "electron-builder --publish always"
   },
   "keywords": [],
   "author": {
     "name": "Kamil Samaj",
-    "email": "kamil.samaj@accolade.com"
+    "email": "kamilsamaj@gmail.com"
   },
   "license": "MIT",
   "build": {
@@ -33,6 +34,11 @@
         "deb"
       ],
       "category": "utility"
+    },
+    "publish": {
+      "provider": "s3",
+      "bucket": "kamils-electron-app",
+      "path": "app"
     }
   },
   "config": {
@@ -53,10 +59,6 @@
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
           "config": {}
         }
       ]
